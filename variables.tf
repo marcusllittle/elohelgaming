@@ -7,7 +7,7 @@ variable "region" {
 variable "allowed_availability_zone_identifier" {
   description = "A list of allowed availability zone identifiers"
   type        = list(string)
-  default     = ["us-east-1a", "us-east-1b"]  # replace with your availability zones
+  default     = ["us-east-1a", "us-east-1b"] # replace with your availability zones
 }
 
 variable "instance_type" {

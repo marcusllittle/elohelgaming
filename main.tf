@@ -3,10 +3,10 @@ provider "aws" {
 }
 
 resource "aws_instance" "gaming_instance" {
-  ami           = var.custom_ami != "" ? var.custom_ami : data.aws_ami.windows.id
-  instance_type = var.instance_type
-  key_name      = aws_key_pair.deployer.key_name
-  subnet_id     = aws_subnet.main.id
+  ami               = var.custom_ami != "" ? var.custom_ami : data.aws_ami.windows.id
+  instance_type     = var.instance_type
+  key_name          = aws_key_pair.deployer.key_name
+  subnet_id         = aws_subnet.main.id
   availability_zone = var.allowed_availability_zone_identifier[0]
 
   root_block_device {
