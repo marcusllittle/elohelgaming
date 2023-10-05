@@ -33,3 +33,8 @@ variable "custom_ami" {
   type        = string
   default     = ""
 }
+
+variable "ssh_public_key" {
+  description = "The SSH public key"
+  type        = string
+}

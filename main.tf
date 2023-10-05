@@ -24,8 +24,8 @@ resource "aws_instance" "gaming_instance" {
 }
 
 resource "aws_key_pair" "deployer" {
-  key_name   = var.resource_name
-  public_key = file("~/.ssh/id_rsa.pub")
+  key_name   = "deployer-key"
+  public_key = var.ssh_public_key
 }
 
 resource "aws_vpc" "main" {
