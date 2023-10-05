@@ -4,6 +4,11 @@ variable "region" {
   default     = "us-east-1"
 }
 
+variable "ssh_public_key" {
+  description = "The SSH public key"
+  type        = string
+}
+
 variable "allowed_availability_zone_identifier" {
   description = "A list of allowed availability zone identifiers"
   type        = list(string)
@@ -32,9 +37,4 @@ variable "custom_ami" {
   description = "Custom AMI ID for the EC2 instance. Leave blank to use the default Windows Server 2019 AMI"
   type        = string
   default     = ""
-}
-
-variable "ssh_public_key" {
-  description = "The SSH public key"
-  type        = string
 }
