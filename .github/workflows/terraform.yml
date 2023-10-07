@@ -32,15 +32,15 @@ jobs:
 
       - name: Terraform Validate
         run: terraform validate -no-color
-        
-        - name: Terraform Plan
+
+      - name: Terraform Plan
         run: terraform plan -var-file=terraform.tfvars -no-color
         env:
           ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
           ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
           ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
           ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-          SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
+          #SSH_PUBLIC_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
 
       # Uncomment to apply
       # - name: Terraform Apply
