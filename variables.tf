@@ -7,6 +7,7 @@ variable "region" {
 variable "ssh_public_key" {
   description = "The SSH public key"
   type        = string
+  default     = "" // You can set a default value or leave it as an empty string
 }
 
 variable "allowed_availability_zone_identifier" {

@@ -2,6 +2,10 @@ provider "aws" {
   region = var.region
 }
 
+locals {
+  ssh_public_key = file("${path.module}/id_rsa.pub")
+}
+
 resource "aws_instance" "gaming_instance" {
   ami               = var.custom_ami != "" ? var.custom_ami : data.aws_ami.windows.id
   instance_type     = var.instance_type
@@ -25,7 +29,7 @@ resource "aws_instance" "gaming_instance" {
 
 resource "aws_key_pair" "deployer" {
   key_name   = "deployer-key"
-  public_key = file(var.ssh_public_key)
+  public_key = local.ssh_public_key
 }
 
 resource "aws_vpc" "main" {
